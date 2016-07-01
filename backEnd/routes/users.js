@@ -3,7 +3,7 @@ var router = express.Router();
 var data = require('../lib/data');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('', function(req, res, next) {
     res.json(data);
 });
 

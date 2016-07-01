@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $.get("http://localhost:3000/", function(data, status) {
+    $.get("http://localhost:3000/users", function(data, status) {
         getUsers(data);
     })
 
@@ -9,10 +9,10 @@ $(document).ready(function() {
             var last = user.user_data.last_name;
             var userID = user.user_data.id;
             var list = document.createElement('p');
-            $(list).html(`<a href='/users/${userID}'>${first}</a> ${last}`);
+            list.id = userID;
+            $(list).html(`<a href='user_profiles.html'>${first}</a> ${last}`);
             $('.userList').append(list);
         })
-        profiles();
     }
     $.get("http://localhost:3000/active_users", function(data, status) {
         activeUsers(data);
@@ -24,22 +24,8 @@ $(document).ready(function() {
             var last = user.last_name;
             var userID = user.id;
             var list = document.createElement('p');
-            $(list).html(`<a href='/users/${userID}'>${first}</a> ${last}`);
-            $('.activeUserList').append(list);
-        })
-    }
-
-    $.get("http://localhost:3000/users", function(data, status) {
-        profile(data);
-    })
-
-    function profile(data) {
-        data.forEach(function(user) {
-            var first = user.first_name;
-            var last = user.last_name;
-            var userID = user.id;
-            var list = document.createElement('p');
-            $(list).html(`<a href='/users/${userID}'>${first}</a> ${last}`);
+            list.id = userID;
+            $(list).html(`<a href='users_profiles.html'>${first}</a> ${last}`);
             $('.activeUserList').append(list);
         })
     }
