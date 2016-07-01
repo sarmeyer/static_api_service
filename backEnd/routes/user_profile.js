@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var data = require('../lib/data');
-var getProfiles = require('../lib/functions');
+var getProfiles = require('../lib/functions').getProfiles;
 
 
 /* GET Active users listing. */
-router.get('/user/:id', function(req, res, next) {
-  var userID = req.params.id;
+router.get('/users/:id', function(req, res, next) {
+  var userProf = req.params.id;
   console.log('************');
-  console.log(userID);
-    res.json(getActives(data));
+  console.log(userProf);
+    res.json(getProfiles(data));
 });
 
 module.exports = router;

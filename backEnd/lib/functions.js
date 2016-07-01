@@ -14,7 +14,7 @@ module.exports = {
     var profile = [];
     data.forEach(function(users) {
       var userID = users.user_data.id;
-      if (userID === ) {
+      if (userID === userProf ) {
         profile.push(users.user_data);
       }
     })

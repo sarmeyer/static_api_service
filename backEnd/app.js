@@ -23,10 +23,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', users);
-app.use('/users', users);
+app.use('/', users);
+// app.use('/users', users);
 app.use('/active_users', active_users);
-app.use('/user_profile', user_profile);
+app.use('/users/:id', user_profile);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

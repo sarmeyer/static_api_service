@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var data = require('../lib/data');
-var getActives = require('../lib/functions');
+var getActives = require('../lib/functions').getActives;
 
 
 /* GET Active users listing. */
